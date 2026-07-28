@@ -44,16 +44,16 @@ export interface PricingInput {
 export interface PricingResult {
   perorg: number;
   startPerorg: number;
-  dronePerorg: number;
+  droneFlat: number;
   total: number;
 }
 
 export function calcPricing({ pkg, category, org, start, drone }: PricingInput): PricingResult {
   const perorg = getPerOrg(pkg, category, org);
   const startPerorg = START_ADDON[start][category];
-  const dronePerorg = drone ? DRONE_ADDON[category] : 0;
-  const total = (perorg + startPerorg) * org + dronePerorg;
-  return { perorg, startPerorg, dronePerorg, total };
+  const droneFlat = drone ? DRONE_ADDON[category] : 0; // ponytail: flat per battery, not per org
+  const total = (perorg + startPerorg) * org + droneFlat;
+  return { perorg, startPerorg, droneFlat, total };
 }
 
 export function formatIDR(n: number): string {

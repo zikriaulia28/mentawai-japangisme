@@ -28,7 +28,7 @@ describe("calcPricing", () => {
     const r = calcPricing({ pkg: "3H2M", category: "WNA", org: 7, start: "Pekanbaru", drone: true });
     expect(r.perorg).toBe(2_000_000);
     expect(r.startPerorg).toBe(1_350_000);
-    expect(r.dronePerorg).toBe(1_500_000);
+    expect(r.droneFlat).toBe(1_500_000);
     // (2.000.000 + 1.350.000) * 7 + 1.500.000  (drone not multiplied by org)
     expect(r.total).toBe((2_000_000 + 1_350_000) * 7 + 1_500_000);
   });
@@ -38,11 +38,14 @@ describe("calcPricing", () => {
     expect(r.startPerorg).toBe(0);
   });
 
-  it("drone add-on WNI 1jt and WNA 1.5jt", () => {
-    const wni = calcPricing({ pkg: "2H1M", category: "WNI", org: 2, start: "Tuapejat", drone: true });
-    const wna = calcPricing({ pkg: "2H1M", category: "WNA", org: 2, start: "Tuapejat", drone: true });
-    expect(wni.dronePerorg).toBe(1_000_000);
-    expect(wna.dronePerorg).toBe(1_500_000);
+  it("drone add-on WNI 1jt and WNA 1.5jt (flat per battery, not x org)", () => {
+    const wni = calcPricing({ pkg: "2H1M", category: "WNI", org: 6, start: "Tuapejat", drone: true });
+    const wna = calcPricing({ pkg: "2H1M", category: "WNA", org: 6, start: "Tuapejat", drone: true });
+    expect(wni.droneFlat).toBe(1_000_000);
+    expect(wna.droneFlat).toBe(1_500_000);
+    // org 6: drone must NOT be multiplied by 6
+    expect(wni.total).toBe(1_800_000 * 6 + 1_000_000);
+    expect(wna.total).toBe(1_900_000 * 6 + 1_500_000);
   });
 });
 
