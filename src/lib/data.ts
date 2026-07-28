@@ -6,7 +6,7 @@ export const BRAND = {
   owner: "Bung Japang",
   phone: "+62 823-6024-5556",
   waUrl:
-    "https://wa.me/6282360245556?text=Halo%20Bung%20Japang,%20saya%20tertarik%20trip%20Mentawai!",
+    "https://wa.me/6282360245556?text=Halo%20Bung%20Japang,%20saya%20tertarik%20dengan%20trip%20Mentawai%20ini.%20Bisakah%20kita%20berdiskusi%20mengenai%20rencana%20liburan%20saya%20ke%20Mentawai?",
   ig: "tripmentawai_japangisme",
   tiktok: "Japangisme Mentawai Tour Guide",
   logo: "/logo.png",
@@ -22,8 +22,8 @@ export const NAV_LINKS = [
 ];
 
 export const HERO = {
-  headline: "Eksplorasi Kepulauan Mentawai",
-  sub: "Open Trip 2 Hari 1 Malam & 3 Hari 2 Malam — Full Service dari Tuapejat",
+  headline: "Trip Mentawai Japangisme",
+  sub: "Opentrip dan Privatetrip Mentawai 3 Hari 2 Malam & 2 Hari 1 Malam Layanan jasa lokal Mentawai",
   slides: [
     "/hero/hero-1.jpg",
     "/hero/hero-2.jpg",
@@ -61,6 +61,7 @@ export const HIGHLIGHTS = [
     copy: "Gratis foto/video bawah laut",
   },
   { icon: "Plane", label: "Dokumentasi Drone", copy: "By request (add-on)" },
+  { icon: "Users", label: "Jasa Lokal", copy: "Guide & crew asli Mentawai" },
 ];
 
 export const INCLUDED = [
@@ -78,13 +79,13 @@ export const INCLUDED = [
 export const EXCLUDED = [
   "Transportasi menuju Padang (jika luar Padang)",
   "Penginapan selama di Padang",
-  "Tiket kapal Mentawai Fast (Padang ⇄ Tuapejat)",
+  "Tiket kapal Mentawai Fast (Padang ⇄ Tuapejat) tekhusus tamu yang start Tuapejat (Mentawai)",
   "Obat pribadi (untuk yang punya penyakit bawaan)",
   "Tip guide",
 ];
 
 export const DRONE_CALLOUT =
-  "🎬 Dokumentasi Drone tersedia sebagai add-on — IDR 1.000.000/pax (WNI) | IDR 1.500.000/pax (WNA). By request, minimal H-2 sebelum trip.";
+  "🎬 Dokumentasi Drone tersedia sebagai add-on — IDR 1.000.000/battery (WNI) | IDR 1.500.000/battery (WNA). By request, minimal H-2 sebelum trip.";
 
 export interface ItineraryItem {
   time: string;
@@ -305,9 +306,8 @@ export const TERMS = [
   "DP tidak bisa dikembalikan jika peserta membatalkan, namun bisa di-reschedule khusus peserta PRIVATE TRIP",
   "Reschedule masa tenggang 5 hari",
   "Uang dikembalikan 100% jika kapal Padang ⇄ Tuapejat tidak jalan karena faktor cuaca",
-  "Drone: biaya tambahan (WNI IDR 1.000.000/pax, WNA IDR 1.500.000/pax) — by request",
+  "Drone: biaya tambahan (WNI IDR 1.000.000/battery, WNA IDR 1.500.000/battery) — by request",
   "Schedule bisa berubah sesuai kondisi cuaca (badai, pasang naik/turun)",
-  "Kami selalu menerima masukan & diskusi dari setiap perjalanan",
   "Pemesanan paket include drone minimal H-2 sebelum trip",
   "Open trip = 7 pax minimum. Jika peserta <7, peserta pilih: Ikut harga sesuai jumlah peserta, atau Trip dibatalkan + DP dikembalikan 100%",
 ];
@@ -335,14 +335,14 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Add-on drone gimana?",
-    a: "WNI IDR1.000.000/pax, WNA IDR1.500.000/pax, by request, minimal H-2 sebelum trip.",
+    a: "WNI IDR 1.000.000/battery, WNA IDR 1.500.000/battery, by request, minimal H-2 sebelum trip.",
   },
   {
     q: "Peralatan snorkeling / SUP termasuk?",
-    a: "Include: life jacket, snorkeling gear, paddle board, dokumentasi underwater. Exclude: tip guide & tiket kapal Mentawai Fast.",
+    a: "Include: life jacket, snorkeling gear, paddle board, dokumentasi underwater. Exclude: tip guide & tiket kapal Mentawai Fast jika peserta start dari Tuapejat (Mentawai)",
   },
   {
     q: "Dokumen apa yang dibawa?",
-    a: "KTP/SIM untuk identitas + tiket kapal Mentawai Fast (Padang⇄Tuapejat, bukan include). Transportasi ke Padang bukan tanggung kami.",
+    a: "KTP/SIM untuk identitas + tiket kapal Mentawai Fast (Padang⇄Tuapejat, bukan include). Transportasi ke Padang bukan tanggung kami jika peserta start dari Tuapejat (Mentawai)",
   },
 ];
