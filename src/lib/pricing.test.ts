@@ -24,12 +24,13 @@ describe("calcPricing", () => {
     expect(r.total).toBe(1_800_000 * 6);
   });
 
-  it("WNA 3H2M 7 org start Pekanbaru + drone = expected", () => {
+  it("WNA 3H2M 7 org start Pekanbaru + drone = drone flat (not xorg)", () => {
     const r = calcPricing({ pkg: "3H2M", category: "WNA", org: 7, start: "Pekanbaru", drone: true });
     expect(r.perorg).toBe(2_000_000);
     expect(r.startPerorg).toBe(1_350_000);
     expect(r.dronePerorg).toBe(1_500_000);
-    expect(r.total).toBe((2_000_000 + 1_350_000 + 1_500_000) * 7);
+    // (2.000.000 + 1.350.000) * 7 + 1.500.000  (drone not multiplied by org)
+    expect(r.total).toBe((2_000_000 + 1_350_000) * 7 + 1_500_000);
   });
 
   it("free start Tuapejat adds nothing", () => {

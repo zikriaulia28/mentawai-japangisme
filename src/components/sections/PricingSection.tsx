@@ -161,7 +161,7 @@ export function PricingSection() {
                   )}
                 >
                   <Check className={cn("h-4 w-4", drone ? "opacity-100" : "opacity-0")} />
-                  Drone {category === "WNI" ? "+1jt" : "+1.5jt"}/org
+                  Drone {category === "WNI" ? "+1jt" : "+1.5jt"}/battery
                 </button>
               </div>
             </div>

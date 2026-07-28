@@ -52,7 +52,7 @@ export function calcPricing({ pkg, category, org, start, drone }: PricingInput):
   const perorg = getPerOrg(pkg, category, org);
   const startPerorg = START_ADDON[start][category];
   const dronePerorg = drone ? DRONE_ADDON[category] : 0;
-  const total = (perorg + startPerorg + dronePerorg) * org;
+  const total = (perorg + startPerorg) * org + dronePerorg;
   return { perorg, startPerorg, dronePerorg, total };
 }
 
