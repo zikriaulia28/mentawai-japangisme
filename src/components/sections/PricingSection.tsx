@@ -14,29 +14,27 @@ import {
   type StartPoint,
 } from "@/lib/pricing";
 
-const org_OPTIONS = [2, 3, 5, 7] as const;
-const org_LABEL: Record<number, string> = {
-  2: "2",
-  3: "3-4",
-  5: "5-6",
-  7: "7-10",
-};
-const TIER_LABEL: Record<number, string> = {
-  2: "2 org",
-  3: "3-4 org",
-  5: "5-6 org",
-  7: "7-10 org (open trip)",
-};
+const ORG_OPTIONS = [2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
-const TIERS: { pkg: PackageKey; org: 2 | 3 | 5 | 7 }[] = [
+const TIERS: { pkg: PackageKey; org: number }[] = [
   { pkg: "2H1M", org: 2 },
   { pkg: "2H1M", org: 3 },
+  { pkg: "2H1M", org: 4 },
   { pkg: "2H1M", org: 5 },
+  { pkg: "2H1M", org: 6 },
   { pkg: "2H1M", org: 7 },
+  { pkg: "2H1M", org: 8 },
+  { pkg: "2H1M", org: 9 },
+  { pkg: "2H1M", org: 10 },
   { pkg: "3H2M", org: 2 },
   { pkg: "3H2M", org: 3 },
+  { pkg: "3H2M", org: 4 },
   { pkg: "3H2M", org: 5 },
+  { pkg: "3H2M", org: 6 },
   { pkg: "3H2M", org: 7 },
+  { pkg: "3H2M", org: 8 },
+  { pkg: "3H2M", org: 9 },
+  { pkg: "3H2M", org: 10 },
 ];
 
 function Pill({
@@ -52,7 +50,7 @@ function Pill({
     <button
       onClick={onClick}
       className={cn(
-        "rounded-full px-5 py-2 text-sm font-semibold transition-colors",
+        "rounded-full px-4 py-2 text-sm font-semibold transition-colors",
         active
           ? "bg-gold text-gold-foreground"
           : "bg-slate-100 text-slate-600 hover:bg-slate-200",
@@ -101,16 +99,10 @@ export function PricingSection() {
             </Pill>
           </div>
           <div className="flex gap-2">
-            <Pill
-              active={category === "WNI"}
-              onClick={() => setCategory("WNI")}
-            >
+            <Pill active={category === "WNI"} onClick={() => setCategory("WNI")}>
               WNI
             </Pill>
-            <Pill
-              active={category === "WNA"}
-              onClick={() => setCategory("WNA")}
-            >
+            <Pill active={category === "WNA"} onClick={() => setCategory("WNA")}>
               WNA
             </Pill>
           </div>
@@ -118,9 +110,9 @@ export function PricingSection() {
 
         <Reveal className="mt-5 flex flex-wrap items-center justify-center gap-2">
           <span className="text-sm text-slate-500">Jumlah org:</span>
-          {org_OPTIONS.map((p) => (
-            <Pill key={p} active={org === p} onClick={() => setOrg(p)}>
-              {org_LABEL[p]}
+          {ORG_OPTIONS.map((o) => (
+            <Pill key={o} active={org === o} onClick={() => setOrg(o)}>
+              {o}
             </Pill>
           ))}
         </Reveal>
@@ -130,20 +122,16 @@ export function PricingSection() {
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="text-sm text-slate-500">
-                  {pkg} · {category} · {TIER_LABEL[org]}
+                  {pkg} · {category} · {org} org
+                  {org >= 7 ? " (open trip)" : ""}
                 </p>
                 <p className="mt-1 font-heading text-4xl font-extrabold text-ocean">
                   {formatIDR(result.perorg)}
-                  <span className="text-base font-medium text-slate-500">
-                    {" "}
-                    /org
-                  </span>
+                  <span className="text-base font-medium text-slate-500"> /org</span>
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-slate-500">
-                  Total estimasi ({org} org)
-                </p>
+                <p className="text-sm text-slate-500">Total estimasi ({org} org)</p>
                 <p className="font-heading text-3xl font-bold text-gold">
                   {formatIDR(result.total)}
                 </p>
@@ -152,27 +140,17 @@ export function PricingSection() {
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div>
-                <p className="mb-2 text-sm font-semibold text-slate-700">
-                  Start point
-                </p>
+                <p className="mb-2 text-sm font-semibold text-slate-700">Start point</p>
                 <div className="flex flex-wrap gap-2">
-                  {(["Tuapejat", "Padang", "Pekanbaru"] as StartPoint[]).map(
-                    (s) => (
-                      <Pill
-                        key={s}
-                        active={start === s}
-                        onClick={() => setStart(s)}
-                      >
-                        {s === "Tuapejat" ? "Tuapejat (Gratis)" : s}
-                      </Pill>
-                    ),
-                  )}
+                  {(["Tuapejat", "Padang", "Pekanbaru"] as StartPoint[]).map((s) => (
+                    <Pill key={s} active={start === s} onClick={() => setStart(s)}>
+                      {s === "Tuapejat" ? "Tuapejat (Gratis)" : s}
+                    </Pill>
+                  ))}
                 </div>
               </div>
               <div>
-                <p className="mb-2 text-sm font-semibold text-slate-700">
-                  Add-on
-                </p>
+                <p className="mb-2 text-sm font-semibold text-slate-700">Add-on</p>
                 <button
                   onClick={() => setDrone(!drone)}
                   className={cn(
@@ -182,12 +160,7 @@ export function PricingSection() {
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200",
                   )}
                 >
-                  <Check
-                    className={cn(
-                      "h-4 w-4",
-                      drone ? "opacity-100" : "opacity-0",
-                    )}
-                  />
+                  <Check className={cn("h-4 w-4", drone ? "opacity-100" : "opacity-0")} />
                   Drone {category === "WNI" ? "+1jt" : "+1.5jt"}/org
                 </button>
               </div>
@@ -197,10 +170,7 @@ export function PricingSection() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "mt-6 w-full rounded-full",
-              )}
+              className={cn(buttonVariants({ size: "lg" }), "mt-6 w-full rounded-full")}
             >
               <MessageCircle className="mr-2" /> Pesan via WhatsApp
             </a>
@@ -212,18 +182,17 @@ export function PricingSection() {
             <table className="w-full text-left text-sm">
               <thead className="bg-slate-100 text-slate-600">
                 <tr>
-                  <th className="px-4 py-3 font-semibold">Tier</th>
+                  <th className="px-4 py-3 font-semibold">Org</th>
                   <th className="px-4 py-3 font-semibold">WNI /org</th>
                   <th className="px-4 py-3 font-semibold">WNA /org</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {TIERS.filter((t) => t.pkg === pkg).map((t) => (
-                  <tr
-                    key={t.org}
-                    className={cn(t.org === result.tier && "bg-gold/10")}
-                  >
-                    <td className="px-4 py-3">{TIER_LABEL[t.org]}</td>
+                  <tr key={t.org} className={cn(t.org === org && "bg-gold/10")}>
+                    <td className="px-4 py-3">
+                      {t.org} org{t.org >= 7 ? " (open trip)" : ""}
+                    </td>
                     <td className="px-4 py-3">
                       {formatIDR(
                         calcPricing({
