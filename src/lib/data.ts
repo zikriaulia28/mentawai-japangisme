@@ -229,12 +229,21 @@ export const GALLERY: GalleryImage[] = [
   { src: "/gallery/mangobay/mangobay-1.jpg", spot: "Mangobay" },
   { src: "/gallery/mangobay/mangobay-2.jpg", spot: "Mangobay" },
   { src: "/gallery/mangobay/mangobay-3.webp", spot: "Mangobay" },
+  { src: "/gallery/mangobay/mangobay-4.jpg", spot: "Mangobay" },
   {
     src: "/gallery/gosong-simakakang/gosong-simakakang-1.jpg",
     spot: "Gosong Simakakang",
   },
   {
     src: "/gallery/gosong-simakakang/gosong-simakakang-2.jpg",
+    spot: "Gosong Simakakang",
+  },
+  {
+    src: "/gallery/gosong-simakakang/gosong-simakakang-3.jpg",
+    spot: "Gosong Simakakang",
+  },
+  {
+    src: "/gallery/gosong-simakakang/gosong-simakakang-4.jpg",
     spot: "Gosong Simakakang",
   },
   {
@@ -261,8 +270,30 @@ export const GALLERY: GalleryImage[] = [
     src: "/gallery/spongebob-island/spongebob-island-1.jpg",
     spot: "Spongebob",
   },
+  {
+    src: "/gallery/spongebob-island/spongebob-island-2.jpg",
+    spot: "Spongebob",
+  },
+  {
+    src: "/gallery/spongebob-island/spongebob-island-3.jpg",
+    spot: "Spongebob",
+  },
+  {
+    src: "/gallery/spongebob-island/spongebob-island-4.jpg",
+    spot: "Spongebob",
+  },
+  {
+    src: "/gallery/spongebob-island/spongebob-island-5.jpg",
+    spot: "Spongebob",
+  },
+  {
+    src: "/gallery/spongebob-island/spongebob-island-6.jpg",
+    spot: "Spongebob",
+  },
   { src: "/gallery/pulau-setan/pulau-setan-1.jpg", spot: "Pulau Setan" },
   { src: "/gallery/spot-surfing/spot-surfing-1.jpg", spot: "Surfing" },
+  { src: "/gallery/spot-surfing/spot-surfing-2.jpg", spot: "Surfing" },
+  { src: "/gallery/spot-surfing/spot-surfing-3.jpg", spot: "Surfing" },
 ];
 
 export interface Testimonial {

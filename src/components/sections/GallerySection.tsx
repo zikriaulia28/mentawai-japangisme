@@ -39,7 +39,7 @@ export function GallerySection() {
           ))}
         </Reveal>
 
-        <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
+        <div className="mt-8 flex gap-3 overflow-x-auto px-4 pb-3 -mx-4 snap-x snap-mandatory md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {images.map((g, i) => (
             <motion.button
               key={g.src}
@@ -47,11 +47,30 @@ export function GallerySection() {
               onClick={() => setIndex(i)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="group relative block w-full overflow-hidden rounded-xl shadow-sm"
+              className="group relative block aspect-[4/3] w-[78vw] shrink-0 snap-start overflow-hidden rounded-2xl shadow-sm"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={g.src} alt={g.spot} loading="lazy" className="w-full transition-transform duration-300 group-hover:scale-105" />
-              <span className="absolute inset-x-0 bottom-0 bg-black/50 px-3 py-2 text-left text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
+              <img src={g.src} alt={g.spot} loading="lazy" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-left text-xs font-medium text-white">
+                {g.spot}
+              </span>
+            </motion.button>
+          ))}
+        </div>
+
+        <div className="mt-8 hidden gap-4 md:columns-4 [&>*]:mb-4 [&>*]:break-inside-avoid md:block">
+          {images.map((g, i) => (
+            <motion.button
+              key={g.src}
+              layout
+              onClick={() => setIndex(i)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="group relative block w-full overflow-hidden rounded-2xl shadow-sm"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={g.src} alt={g.spot} loading={i < 4 ? "eager" : "lazy"} className="w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-left text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
                 {g.spot}
               </span>
             </motion.button>
