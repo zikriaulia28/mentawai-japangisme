@@ -9,7 +9,9 @@ import { cn } from "@/lib/utils";
 import { BRAND, HERO } from "@/lib/data";
 
 export function Hero() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 5000, stopOnInteraction: false })]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000, stopOnInteraction: false }),
+  ]);
   const [selected, setSelected] = useState(0);
 
   const onSelect = useCallback(() => {
@@ -40,7 +42,7 @@ export function Hero() {
       </div>
 
       {/* dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/40" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
         <AnimatePresence mode="wait">
@@ -55,13 +57,18 @@ export function Hero() {
             <h1 className="font-heading text-4xl font-extrabold drop-shadow-lg sm:text-6xl">
               {HERO.headline}
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-base drop-shadow sm:text-xl">{HERO.sub}</p>
+            <p className="mx-auto mt-4 max-w-2xl text-base drop-shadow sm:text-xl">
+              {HERO.sub}
+            </p>
           </motion.div>
         </AnimatePresence>
 
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-xs text-white/90 sm:text-sm">
           {HERO.trust.map((t) => (
-            <span key={t} className="rounded-full bg-white/15 px-3 py-1 backdrop-blur">
+            <span
+              key={t}
+              className="rounded-full bg-white/15 px-3 py-1 backdrop-blur"
+            >
               {t}
             </span>
           ))}
@@ -72,7 +79,10 @@ export function Hero() {
             href={BRAND.waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(buttonVariants({ size: "lg" }), "rounded-full px-8 text-base font-semibold")}
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "rounded-full px-8 py-6 text-base font-semibold",
+            )}
           >
             Pesan via WhatsApp
           </a>
@@ -94,7 +104,7 @@ export function Hero() {
             onClick={() => emblaApi?.scrollTo(i)}
             className={cn(
               "h-2 rounded-full transition-all",
-              i === selected ? "w-6 bg-gold" : "w-2 bg-white/60"
+              i === selected ? "w-6 bg-gold" : "w-2 bg-white/60",
             )}
           />
         ))}

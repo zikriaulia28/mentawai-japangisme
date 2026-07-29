@@ -9,7 +9,7 @@ export const BRAND = {
     "https://wa.me/6282360245556?text=Halo%20Bung%20Japang,%20saya%20tertarik%20dengan%20trip%20Mentawai%20ini.%20Bisakah%20kita%20berdiskusi%20mengenai%20rencana%20liburan%20saya%20ke%20Mentawai?",
   ig: "tripmentawai_japangisme",
   tiktok: "Japangisme Mentawai Tour Guide",
-  logo: "/logo.png",
+  logo: "/logo.jpg",
 };
 
 export const NAV_LINKS = [
@@ -23,7 +23,7 @@ export const NAV_LINKS = [
 
 export const HERO = {
   headline: "Trip Mentawai Japangisme",
-  sub: "Opentrip dan Privatetrip Mentawai 3 Hari 2 Malam & 2 Hari 1 Malam Layanan jasa lokal Mentawai",
+  sub: "Open Trip dan Private Trip Mentawai 3 Hari 2 Malam & 2 Hari 1 Malam Layanan jasa lokal Mentawai",
   slides: [
     "/hero/hero-1.jpg",
     "/hero/hero-2.jpg",
@@ -34,7 +34,7 @@ export const HERO = {
     "AC Penginapan",
     "Free Snorkeling",
     "Free SUP",
-    "Underwater Photo+Video",
+    "Underwater Photo & Video",
   ],
 };
 
@@ -296,6 +296,30 @@ export const TESTIMONIALS: Testimonial[] = [
     pkg: "3H2M",
     text: "Private trip bareng teman, super worth it. View dari drone gila!",
   },
+  {
+    name: "Rahmat Reski",
+    city: "Bukittinggi",
+    pkg: "3H2M",
+    text: "Trip-nya luar biasa! Guide dan crew-nya profesional, bikin nyaman banget.",
+  },
+  {
+    name: "Fauzi Al Rasyid",
+    city: "Padang",
+    pkg: "2H1M",
+    text: "Jasa lokal dengan pelayanan yang profesional. Jika ingin opentrip dan private trip ke Mentawai jasa ini sangat direkomendasikan. Puas sekali dengan liburannya.",
+  },
+  {
+    name: "Weni Satrini",
+    city: "Bekasi",
+    pkg: "3H2M",
+    text: "Tim Japangisme sangat ramah dan sigap, semua tersusun rapi dari awal sampai akhir. Pemandangan Mentawai yang memukau makin terasa nikmat berkat pelayanan luar biasa. Sangat direkomendasikan!",
+  },
+  {
+    name: "Yupita Elina",
+    city: "Pekanbaru",
+    pkg: "3H2M",
+    text: "Luar biasaaaaaa... tempat yg bagus nyaman pantai yg indah.",
+  },
 ];
 
 export const TERMS = [
@@ -309,7 +333,7 @@ export const TERMS = [
   "Drone: biaya tambahan (WNI IDR 1.000.000/battery, WNA IDR 1.500.000/battery) — by request",
   "Schedule bisa berubah sesuai kondisi cuaca (badai, pasang naik/turun)",
   "Pemesanan paket include drone minimal H-2 sebelum trip",
-  "Open trip = 7 pax minimum. Jika peserta <7, peserta pilih: Ikut harga sesuai jumlah peserta, atau Trip dibatalkan + DP dikembalikan 100%",
+  "Open trip = 7 org minimum. Jika peserta kurang dari 7, peserta pilih: Ikut harga sesuai jumlah peserta, atau Trip dibatalkan + DP dikembalikan 100%",
 ];
 
 export interface Faq {
@@ -319,11 +343,11 @@ export interface Faq {
 export const FAQS: Faq[] = [
   {
     q: "Minimal berapa peserta open trip?",
-    a: "Open trip min 7 pax. Jika <7, peserta pilih: ikut harga sesuai jumlah peserta, atau trip dibatalkan + DP kembali 100%.",
+    a: "Open trip min 7 org. Jika kurang dari 7, peserta pilih: ikut harga sesuai jumlah peserta, atau trip dibatalkan + DP kembali 100%.",
   },
   {
     q: "Boleh private trip / custom jadwal?",
-    a: "Boleh. Private trip bisa di-reschedule (tenggang 5 hari). Open trip mengikat jadwal mingguan (2H1M = Minggu–Senin).",
+    a: "Boleh. Private trip bisa di-reschedule (tenggang 5 hari). Open trip mengikat jadwal mingguan (2H1M = Minggu – Senin).",
   },
   {
     q: "Berapa DP & kapan lunas?",
