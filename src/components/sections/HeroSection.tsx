@@ -63,17 +63,6 @@ export function Hero() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-xs text-white/90 sm:text-sm">
-          {HERO.trust.map((t) => (
-            <span
-              key={t}
-              className="rounded-full bg-white/15 px-3 py-1 backdrop-blur"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <a
             href={BRAND.waUrl}

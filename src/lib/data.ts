@@ -30,12 +30,6 @@ export const HERO = {
     "/hero/hero-3.jpg",
     "/hero/hero-4.jpg",
   ],
-  trust: [
-    "AC Penginapan",
-    "Free Snorkeling",
-    "Free SUP",
-    "Underwater Photo & Video",
-  ],
 };
 
 export const HIGHLIGHTS = [
