@@ -54,11 +54,17 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="max-w-3xl"
           >
-            <h1 className="font-heading text-4xl font-extrabold drop-shadow-lg sm:text-6xl">
-              {HERO.headline}
-            </h1>
+            <h2 className="font-heading text-3xl font-extrabold drop-shadow-lg sm:text-6xl">
+              {HERO.headline1}
+            </h2>
+            <h2 className="font-heading text-base font-bold drop-shadow-lg sm:text-3xl">
+              {HERO.headline2}
+            </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base drop-shadow sm:text-xl">
-              {HERO.sub}
+              {HERO.sub1}
+            </p>
+            <p className="mx-auto mt-4 max-w-2xl text-base drop-shadow sm:text-xl">
+              {HERO.sub2}
             </p>
           </motion.div>
         </AnimatePresence>

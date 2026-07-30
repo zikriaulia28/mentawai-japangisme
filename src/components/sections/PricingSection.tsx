@@ -14,7 +14,7 @@ import {
   type StartPoint,
 } from "@/lib/pricing";
 
-const ORG_OPTIONS = [2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+const ORG_OPTIONS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] as const;
 
 const TIERS: { pkg: PackageKey; org: number }[] = [
   { pkg: "2H1M", org: 2 },
@@ -35,6 +35,11 @@ const TIERS: { pkg: PackageKey; org: number }[] = [
   { pkg: "3H2M", org: 8 },
   { pkg: "3H2M", org: 9 },
   { pkg: "3H2M", org: 10 },
+  { pkg: "3H2M", org: 11 },
+  { pkg: "3H2M", org: 12 },
+  { pkg: "3H2M", org: 13 },
+  { pkg: "3H2M", org: 14 },
+  { pkg: "3H2M", org: 15 },
 ];
 
 function Pill({
@@ -62,7 +67,7 @@ function Pill({
 }
 
 export function PricingSection() {
-  const [pkg, setPkg] = useState<PackageKey>("2H1M");
+  const [pkg, setPkg] = useState<PackageKey>("3H2M");
   const [category, setCategory] = useState<Category>("WNI");
   const [org, setOrg] = useState<number>(2);
   const [start, setStart] = useState<StartPoint>("Tuapejat");
@@ -91,18 +96,25 @@ export function PricingSection() {
 
         <Reveal className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <div className="flex gap-2">
-            <Pill active={pkg === "2H1M"} onClick={() => setPkg("2H1M")}>
-              2H1M
-            </Pill>
             <Pill active={pkg === "3H2M"} onClick={() => setPkg("3H2M")}>
               3H2M
             </Pill>
+
+            <Pill active={pkg === "2H1M"} onClick={() => setPkg("2H1M")}>
+              2H1M
+            </Pill>
           </div>
           <div className="flex gap-2">
-            <Pill active={category === "WNI"} onClick={() => setCategory("WNI")}>
+            <Pill
+              active={category === "WNI"}
+              onClick={() => setCategory("WNI")}
+            >
               WNI
             </Pill>
-            <Pill active={category === "WNA"} onClick={() => setCategory("WNA")}>
+            <Pill
+              active={category === "WNA"}
+              onClick={() => setCategory("WNA")}
+            >
               WNA
             </Pill>
           </div>
@@ -127,11 +139,16 @@ export function PricingSection() {
                 </p>
                 <p className="mt-1 font-heading text-4xl font-extrabold text-ocean">
                   {formatIDR(result.perorg)}
-                  <span className="text-base font-medium text-slate-500"> /org</span>
+                  <span className="text-base font-medium text-slate-500">
+                    {" "}
+                    /org
+                  </span>
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-slate-500">Total estimasi ({org} org)</p>
+                <p className="text-sm text-slate-500">
+                  Total estimasi ({org} org)
+                </p>
                 <p className="font-heading text-3xl font-bold text-gold">
                   {formatIDR(result.total)}
                 </p>
@@ -140,17 +157,27 @@ export function PricingSection() {
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div>
-                <p className="mb-2 text-sm font-semibold text-slate-700">Start point</p>
+                <p className="mb-2 text-sm font-semibold text-slate-700">
+                  Start point
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {(["Tuapejat", "Padang", "Pekanbaru"] as StartPoint[]).map((s) => (
-                    <Pill key={s} active={start === s} onClick={() => setStart(s)}>
-                      {s === "Tuapejat" ? "Tuapejat (Gratis)" : s}
-                    </Pill>
-                  ))}
+                  {(["Tuapejat", "Padang", "Pekanbaru"] as StartPoint[]).map(
+                    (s) => (
+                      <Pill
+                        key={s}
+                        active={start === s}
+                        onClick={() => setStart(s)}
+                      >
+                        {s === "Tuapejat" ? "Tuapejat (Gratis)" : s}
+                      </Pill>
+                    ),
+                  )}
                 </div>
               </div>
               <div>
-                <p className="mb-2 text-sm font-semibold text-slate-700">Add-on</p>
+                <p className="mb-2 text-sm font-semibold text-slate-700">
+                  Add-on
+                </p>
                 <button
                   onClick={() => setDrone(!drone)}
                   className={cn(
@@ -160,7 +187,12 @@ export function PricingSection() {
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200",
                   )}
                 >
-                  <Check className={cn("h-4 w-4", drone ? "opacity-100" : "opacity-0")} />
+                  <Check
+                    className={cn(
+                      "h-4 w-4",
+                      drone ? "opacity-100" : "opacity-0",
+                    )}
+                  />
                   Drone {category === "WNI" ? "+1jt" : "+1.5jt"}/battery
                 </button>
               </div>
@@ -170,7 +202,10 @@ export function PricingSection() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(buttonVariants({ size: "lg" }), "mt-6 w-full rounded-full")}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "mt-6 w-full rounded-full",
+              )}
             >
               <MessageCircle className="mr-2" /> Pesan via WhatsApp
             </a>

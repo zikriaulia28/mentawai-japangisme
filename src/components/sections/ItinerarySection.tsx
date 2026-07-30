@@ -9,13 +9,23 @@ import type { PackageKey } from "@/lib/pricing";
 
 const ICONS = [Anchor, UtensilsCrossed, Ship, Camera, Sun];
 
-function Tab({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
+function Tab({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
   return (
     <button
       onClick={onClick}
       className={cn(
         "rounded-full px-5 py-2 text-sm font-semibold transition-colors",
-        active ? "bg-ocean text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+        active
+          ? "bg-ocean text-white"
+          : "bg-slate-100 text-slate-600 hover:bg-slate-200",
       )}
     >
       {children}
@@ -24,7 +34,7 @@ function Tab({ active, onClick, children }: { active: boolean; onClick: () => vo
 }
 
 export function ItinerarySection() {
-  const [pkg, setPkg] = useState<PackageKey>("2H1M");
+  const [pkg, setPkg] = useState<PackageKey>("3H2M");
   const [dayIdx, setDayIdx] = useState(0);
 
   const data: ItineraryPackage = ITINERARY.find((p) => p.pkg === pkg)!;
@@ -38,11 +48,17 @@ export function ItinerarySection() {
     <section id="itinerary" className="bg-white py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <Reveal>
-          <h2 className="text-center font-heading text-3xl font-bold text-slate-800">Itinerary</h2>
+          <h2 className="text-center font-heading text-3xl font-bold text-slate-800">
+            Itinerary
+          </h2>
         </Reveal>
         <Reveal className="mt-8 flex justify-center gap-3">
-          <Tab active={pkg === "2H1M"} onClick={() => selectPkg("2H1M")}>2H1M</Tab>
-          <Tab active={pkg === "3H2M"} onClick={() => selectPkg("3H2M")}>3H2M</Tab>
+          <Tab active={pkg === "3H2M"} onClick={() => selectPkg("3H2M")}>
+            3H2M
+          </Tab>
+          <Tab active={pkg === "2H1M"} onClick={() => selectPkg("2H1M")}>
+            2H1M
+          </Tab>
         </Reveal>
 
         <Reveal className="mt-4 flex justify-center gap-2">
@@ -66,7 +82,9 @@ export function ItinerarySection() {
                     <span className="inline-flex items-center gap-1 font-mono text-sm font-bold text-ocean">
                       <Icon className="h-4 w-4" /> {it.time}
                     </span>
-                    <span className="text-sm text-slate-700">{it.activity}</span>
+                    <span className="text-sm text-slate-700">
+                      {it.activity}
+                    </span>
                   </div>
                 </li>
               );

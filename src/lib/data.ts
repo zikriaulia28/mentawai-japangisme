@@ -22,8 +22,10 @@ export const NAV_LINKS = [
 ];
 
 export const HERO = {
-  headline: "Trip Mentawai Japangisme",
-  sub: "Open Trip dan Private Trip Mentawai 3 Hari 2 Malam & 2 Hari 1 Malam Layanan jasa lokal Mentawai",
+  headline1: "Explore the Beauty of Mentawai Islands",
+  headline2: "Trip Mentawai Japangisme",
+  sub1: "Open Trip dan Private Trip Mentawai 3 Hari 2 Malam & 2 Hari 1 Malam",
+  sub2: "Layanan jasa lokal Mentawai",
   slides: [
     "/hero/hero-1.jpg",
     "/hero/hero-2.jpg",
@@ -107,7 +109,7 @@ export const ITINERARY: ItineraryPackage[] = [
             activity: "Check-in & meeting point di penginapan, welcome drink",
           },
           { time: "12:00", activity: "ISHOMA" },
-          { time: "13:30", activity: "Prepare Hopping Island" },
+          { time: "13:30", activity: "Prepare Island Hopping" },
           { time: "14:00", activity: "Berangkat menuju Mangobay (Underwater)" },
           {
             time: "16:00",
@@ -152,7 +154,7 @@ export const ITINERARY: ItineraryPackage[] = [
             activity: "Check-in & meeting point, welcome drink",
           },
           { time: "12:00", activity: "ISHOMA" },
-          { time: "13:30", activity: "Prepare Hopping Island" },
+          { time: "13:30", activity: "Prepare Island Hopping" },
           { time: "14:00", activity: "Berangkat menuju Gosong Simakakang" },
           {
             time: "16:00",
@@ -220,7 +222,7 @@ export const GALLERY_SPOTS = [
   "Mangobay",
   "Gosong Simakakang",
   "Pantai Simakakang",
-  "Toska",
+  "Pantai Toska",
   "Spongebob",
   "Surfing",
   "Pulau Setan",
@@ -262,10 +264,10 @@ export const GALLERY: GalleryImage[] = [
     src: "/gallery/pantai-simakakang/pantai-simakakang-4.webp",
     spot: "Pantai Simakakang",
   },
-  { src: "/gallery/pantai-toska/pantai-toska-1.jpg", spot: "Toska" },
-  { src: "/gallery/pantai-toska/pantai-toska-2.webp", spot: "Toska" },
-  { src: "/gallery/pantai-toska/pantai-toska-3.webp", spot: "Toska" },
-  { src: "/gallery/pantai-toska/pantai-toska-4.webp", spot: "Toska" },
+  { src: "/gallery/pantai-toska/pantai-toska-1.jpg", spot: "Pantai Toska" },
+  { src: "/gallery/pantai-toska/pantai-toska-2.webp", spot: "Pantai Toska" },
+  { src: "/gallery/pantai-toska/pantai-toska-3.webp", spot: "Pantai Toska" },
+  { src: "/gallery/pantai-toska/pantai-toska-4.webp", spot: "Pantai Toska" },
   {
     src: "/gallery/spongebob-island/spongebob-island-1.jpg",
     spot: "Spongebob",
@@ -368,11 +370,11 @@ export interface Faq {
 export const FAQS: Faq[] = [
   {
     q: "Minimal berapa peserta open trip?",
-    a: "Open trip min 7 org. Jika kurang dari 7, peserta pilih: ikut harga sesuai jumlah peserta, atau trip dibatalkan + DP kembali 100%.",
+    a: "Bebas, namun menyesuaikan dengan harga yang sudah ditentukan, untuk harga 1.8jt/org start tuapejat minimal peserta 7 orang. Jika kurang dari 7 orang, peserta pilih: ikut harga sesuai jumlah peserta, atau trip dibatalkan + DP kembali 100%.",
   },
   {
     q: "Boleh private trip / custom jadwal?",
-    a: "Boleh. Private trip bisa di-reschedule (tenggang 5 hari). Open trip mengikat jadwal mingguan (2H1M = Minggu – Senin).",
+    a: "Boleh, namun untuk jadwal tetap menyesuaikan dengan jadwal kapal Mentawai fast yaitu setiap hari (Senin, rabu, jumat dan minggu).",
   },
   {
     q: "Berapa DP & kapan lunas?",
