@@ -59,6 +59,24 @@ export const HIGHLIGHTS = [
   { icon: "Plane", label: "Dokumentasi Drone", copy: "By request (add-on)" },
   { icon: "Users", label: "Jasa Lokal", copy: "Guide & crew asli Mentawai" },
 ];
+export interface CrewMember {
+  name: string;
+  title: string;
+  image: string;
+}
+
+export const CREW: CrewMember[] = [
+  {
+    name: "Maret",
+    title: "Operator Boat",
+    image: "/about/maret-operator-boat.jpg",
+  },
+  {
+    name: "Japang",
+    title: "Guide",
+    image: "/about/satria-japang-guide.jpg",
+  },
+];
 
 export const INCLUDED = [
   "Penginapan AC view laut",
@@ -303,6 +321,7 @@ export interface Testimonial {
   city: string;
   pkg: string;
   text: string;
+  rating: number; // New field for manual rating (1-5 stars)
 }
 export const TESTIMONIALS: Testimonial[] = [
   {
@@ -310,42 +329,49 @@ export const TESTIMONIALS: Testimonial[] = [
     city: "Jakarta",
     pkg: "3H2M",
     text: "Trip-nya seru banget! Fasilitas lengkap dan guide-nya ramah.",
+    rating: 5,
   },
   {
     name: "Andi",
     city: "Pekanbaru",
     pkg: "2H1M",
     text: "Best snorkeling experience in Mentawai. Underwater doc-nya mantap!",
+    rating: 4,
   },
   {
     name: "Sarah",
     city: "Surabaya",
     pkg: "3H2M",
     text: "Private trip bareng teman, super worth it. View dari drone gila!",
+    rating: 5,
   },
   {
     name: "Rahmat Reski",
     city: "Bukittinggi",
     pkg: "3H2M",
     text: "Trip-nya luar biasa! Guide dan crew-nya profesional, bikin nyaman banget.",
+    rating: 5,
   },
   {
     name: "Fauzi Al Rasyid",
     city: "Padang",
     pkg: "2H1M",
     text: "Jasa lokal dengan pelayanan yang profesional. Jika ingin opentrip dan private trip ke Mentawai jasa ini sangat direkomendasikan. Puas sekali dengan liburannya.",
+    rating: 5,
   },
   {
     name: "Weni Satrini",
     city: "Bekasi",
     pkg: "3H2M",
     text: "Tim Japangisme sangat ramah dan sigap, semua tersusun rapi dari awal sampai akhir. Pemandangan Mentawai yang memukau makin terasa nikmat berkat pelayanan luar biasa. Sangat direkomendasikan!",
+    rating: 5,
   },
   {
     name: "Yupita Elina",
     city: "Pekanbaru",
     pkg: "3H2M",
     text: "Luar biasaaaaaa... tempat yg bagus nyaman pantai yg indah.",
+    rating: 4,
   },
 ];
 

@@ -45,7 +45,7 @@ export function ItinerarySection() {
   };
 
   return (
-    <section id="itinerary" className="bg-white py-16">
+    <section id="itinerary" className="bg-slate-soft py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <Reveal>
           <h2 className="text-center font-heading text-3xl font-bold text-slate-800">

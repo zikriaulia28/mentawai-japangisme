@@ -83,7 +83,7 @@ export function PricingSection() {
   );
 
   return (
-    <section id="pricing" className="bg-white py-16">
+    <section id="pricing" className="bg-slate-soft py-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Reveal>
           <h2 className="text-center font-heading text-3xl font-bold text-slate-800">

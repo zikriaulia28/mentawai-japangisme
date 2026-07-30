@@ -4,7 +4,7 @@ import { INCLUDED, EXCLUDED, DRONE_CALLOUT } from "@/lib/data";
 
 export function FacilitiesSection() {
   return (
-    <section id="facilities" className="bg-slate-soft py-16">
+    <section id="facilities" className="bg-white py-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Reveal>
           <h2 className="text-center font-heading text-3xl font-bold text-slate-800">Fasilitas</h2>

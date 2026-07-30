@@ -11,6 +11,8 @@ import { TermsSection } from "@/components/sections/TermsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Footer } from "@/components/sections/FooterSection";
 
+import { AboutSection } from "@/components/sections/AboutSection";
+
 export default function Home() {
   return (
     <>
@@ -18,6 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <HighlightsSection />
+        <AboutSection />
         <PricingSection />
         <FacilitiesSection />
         <ItinerarySection />

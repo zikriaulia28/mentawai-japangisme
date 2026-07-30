@@ -19,7 +19,7 @@ export function GallerySection() {
   const slides = images.map((g) => ({ src: g.src }));
 
   return (
-    <section id="gallery" className="bg-slate-soft py-16">
+    <section id="gallery" className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <h2 className="text-center font-heading text-3xl font-bold text-slate-800">Galeri</h2>
