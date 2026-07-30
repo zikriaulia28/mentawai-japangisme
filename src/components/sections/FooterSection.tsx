@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Music2 } from "lucide-react";
 import { BRAND, NAV_LINKS } from "@/lib/data";
 
@@ -6,10 +7,11 @@ export function Footer() {
     <footer id="footer" className="bg-ocean text-white">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={BRAND.logo}
             alt="Japangisme"
+            height={56}
+            width={56}
             className="h-14 w-auto rounded-full"
           />
           <p className="mt-3 text-sm text-white/80">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -32,10 +33,16 @@ export function Hero() {
     <section id="top" className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0" ref={emblaRef}>
         <div className="flex h-full">
-          {HERO.slides.map((src) => (
+          {HERO.slides.map((src, i) => (
             <div key={src} className="relative h-full min-w-0 flex-[0_0_100%]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" className="h-full w-full object-cover" />
+              <Image
+                src={src}
+                alt=""
+                fill
+                priority={i === selected}
+                className="object-cover"
+                sizes="100vw"
+              />
             </div>
           ))}
         </div>

@@ -1,10 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { Reveal } from "@/components/Reveal";
+import dynamic from "next/dynamic";
+
+const Reveal = dynamic(() => import("@/components/Reveal").then((mod) => mod.Reveal), {
+  ssr: false,
+});
 import { cn } from "@/lib/utils";
 import { GALLERY, GALLERY_SPOTS } from "@/lib/data";
 
@@ -49,8 +54,14 @@ export function GallerySection() {
               animate={{ opacity: 1 }}
               className="group relative block aspect-[4/3] w-[78vw] shrink-0 snap-start overflow-hidden rounded-2xl shadow-sm"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={g.src} alt={g.spot} loading="lazy" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              <Image
+                src={g.src}
+                alt={g.spot}
+                fill
+                loading="lazy"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 78vw, 30vw"
+              />
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-left text-xs font-medium text-white">
                 {g.spot}
               </span>
@@ -66,10 +77,16 @@ export function GallerySection() {
               onClick={() => setIndex(i)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="group relative block w-full overflow-hidden rounded-2xl shadow-sm"
+              className="group relative block w-full overflow-hidden rounded-2xl shadow-sm aspect-[4/3] relative" 
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={g.src} alt={g.spot} loading={i < 4 ? "eager" : "lazy"} className="w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              <Image
+                src={g.src}
+                alt={g.spot}
+                fill
+                loading={i < 4 ? "eager" : "lazy"}
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-left text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
                 {g.spot}
               </span>

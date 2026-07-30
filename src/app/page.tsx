@@ -1,17 +1,20 @@
+"use client";
+
 import { Navbar } from "@/components/Navbar";
 import { FloatingWA } from "@/components/sections/FooterSection";
 import { Hero } from "@/components/sections/HeroSection";
-import { HighlightsSection } from "@/components/sections/HighlightsSection";
-import { PricingSection } from "@/components/sections/PricingSection";
-import { FacilitiesSection } from "@/components/sections/FacilitiesSection";
-import { ItinerarySection } from "@/components/sections/ItinerarySection";
-import { GallerySection } from "@/components/sections/GallerySection";
-import { TestimonialSection } from "@/components/sections/TestimonialSection";
-import { TermsSection } from "@/components/sections/TermsSection";
-import { FaqSection } from "@/components/sections/FaqSection";
 import { Footer } from "@/components/sections/FooterSection";
+import dynamic from "next/dynamic";
 
-import { AboutSection } from "@/components/sections/AboutSection";
+const HighlightsSection = dynamic(() => import("@/components/sections/HighlightsSection").then((mod) => mod.HighlightsSection), { ssr: false });
+const PricingSection = dynamic(() => import("@/components/sections/PricingSection").then((mod) => mod.PricingSection), { ssr: false });
+const FacilitiesSection = dynamic(() => import("@/components/sections/FacilitiesSection").then((mod) => mod.FacilitiesSection), { ssr: false });
+const ItinerarySection = dynamic(() => import("@/components/sections/ItinerarySection").then((mod) => mod.ItinerarySection), { ssr: false });
+const GallerySection = dynamic(() => import("@/components/sections/GallerySection").then((mod) => mod.GallerySection), { ssr: false });
+const TestimonialSection = dynamic(() => import("@/components/sections/TestimonialSection").then((mod) => mod.TestimonialSection), { ssr: false });
+const TermsSection = dynamic(() => import("@/components/sections/TermsSection").then((mod) => mod.TermsSection), { ssr: false });
+const FaqSection = dynamic(() => import("@/components/sections/FaqSection").then((mod) => mod.FaqSection), { ssr: false });
+const AboutSection = dynamic(() => import("@/components/sections/AboutSection").then((mod) => mod.AboutSection), { ssr: false });
 
 export default function Home() {
   return (

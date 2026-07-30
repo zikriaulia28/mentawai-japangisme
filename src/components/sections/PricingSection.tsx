@@ -58,7 +58,7 @@ function Pill({
         "rounded-full px-4 py-2 text-sm font-semibold transition-colors",
         active
           ? "bg-gold text-gold-foreground"
-          : "bg-slate-100 text-slate-600 hover:bg-slate-200",
+          : "bg-slate-50 text-slate-700 hover:bg-slate-100",
       )}
     >
       {children}
@@ -130,7 +130,7 @@ export function PricingSection() {
         </Reveal>
 
         <Reveal className="mt-8">
-          <div className="rounded-2xl border border-slate-200 bg-slate-soft p-6 shadow-sm">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="text-sm text-slate-500">
@@ -184,7 +184,7 @@ export function PricingSection() {
                     "flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition-colors",
                     drone
                       ? "bg-gold text-gold-foreground"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200",
+                      : "bg-slate-50 text-slate-700 hover:bg-slate-100",
                   )}
                 >
                   <Check
@@ -215,16 +215,16 @@ export function PricingSection() {
         <Reveal className="mt-8">
           <div className="overflow-hidden rounded-xl border border-slate-200">
             <table className="w-full text-left text-sm">
-              <thead className="bg-slate-100 text-slate-600">
+              <thead className="bg-ocean text-white">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Org</th>
                   <th className="px-4 py-3 font-semibold">WNI /org</th>
                   <th className="px-4 py-3 font-semibold">WNA /org</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-ocean/10">
                 {TIERS.filter((t) => t.pkg === pkg).map((t) => (
-                  <tr key={t.org} className={cn(t.org === org && "bg-gold/10")}>
+                  <tr key={t.org} className={cn(t.org === org ? "bg-gold/10" : "hover:bg-ocean/5")}>
                     <td className="px-4 py-3">
                       {t.org} org{t.org >= 7 ? " (open trip)" : ""}
                     </td>

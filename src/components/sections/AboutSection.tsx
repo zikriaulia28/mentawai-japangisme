@@ -2,7 +2,11 @@
 "use client";
 
 import Image from "next/image";
-import { Reveal } from "@/components/Reveal";
+import dynamic from "next/dynamic";
+
+const Reveal = dynamic(() => import("@/components/Reveal").then((mod) => mod.Reveal), {
+  ssr: false,
+});
 import { BRAND, CREW } from "@/lib/data";
 
 
