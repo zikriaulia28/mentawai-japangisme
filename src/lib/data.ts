@@ -1,4 +1,3 @@
-// All hard-coded content for the landing page, sourced from PRD-FINAL-Japangisme-Mentawai.md.
 import type { PackageKey } from "./pricing";
 
 export const BRAND = {
@@ -68,13 +67,18 @@ export interface CrewMember {
 export const CREW: CrewMember[] = [
   {
     name: "Maret",
-    title: "Operator Boat",
-    image: "/about/maret-operator-boat.jpg",
+    title: "Admin",
+    image: "/about/maret-admin.webp",
   },
   {
-    name: "Japang",
+    name: "Ridwan",
+    title: "Operator Boat",
+    image: "/about/ridwan-operator-boat.webp",
+  },
+  {
+    name: "Satria Yaumil (Japang)",
     title: "Guide",
-    image: "/about/satria-japang-guide.jpg",
+    image: "/about/satria-japang-guide.webp",
   },
 ];
 
@@ -242,7 +246,7 @@ export const GALLERY_SPOTS = [
   "Pantai Simakakang",
   "Pantai Toska",
   "Spongebob",
-  "Surfing",
+  "Spot Surfing",
   "Pulau Setan",
 ];
 export const GALLERY: GalleryImage[] = [
@@ -286,12 +290,9 @@ export const GALLERY: GalleryImage[] = [
   { src: "/gallery/pantai-toska/pantai-toska-2.webp", spot: "Pantai Toska" },
   { src: "/gallery/pantai-toska/pantai-toska-3.webp", spot: "Pantai Toska" },
   { src: "/gallery/pantai-toska/pantai-toska-4.webp", spot: "Pantai Toska" },
+  { src: "/gallery/pantai-toska/pantai-toska-5.jpg", spot: "Pantai Toska" },
   {
     src: "/gallery/spongebob-island/spongebob-island-1.jpg",
-    spot: "Spongebob",
-  },
-  {
-    src: "/gallery/spongebob-island/spongebob-island-2.jpg",
     spot: "Spongebob",
   },
   {
@@ -311,9 +312,9 @@ export const GALLERY: GalleryImage[] = [
     spot: "Spongebob",
   },
   { src: "/gallery/pulau-setan/pulau-setan-1.jpg", spot: "Pulau Setan" },
-  { src: "/gallery/spot-surfing/spot-surfing-1.jpg", spot: "Surfing" },
-  { src: "/gallery/spot-surfing/spot-surfing-2.jpg", spot: "Surfing" },
-  { src: "/gallery/spot-surfing/spot-surfing-3.jpg", spot: "Surfing" },
+  { src: "/gallery/spot-surfing/spot-surfing-1.jpg", spot: "Spot Surfing" },
+  { src: "/gallery/spot-surfing/spot-surfing-2.jpg", spot: "Spot Surfing" },
+  { src: "/gallery/spot-surfing/spot-surfing-3.jpg", spot: "Spot Surfing" },
 ];
 
 export interface Testimonial {
