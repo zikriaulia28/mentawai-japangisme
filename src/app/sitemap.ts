@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://japangisme-mentawai.vercel.app";
+  const base = "https://mentawai-japangisme.vercel.app";
   return [
     { url: base, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/#tentang`, changeFrequency: "monthly", priority: 0.8 },

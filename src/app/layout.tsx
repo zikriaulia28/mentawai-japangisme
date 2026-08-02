@@ -11,7 +11,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://japangisme-mentawai.vercel.app"),
+  metadataBase: new URL("https://mentawai-japangisme.vercel.app"),
   title: "Japangisme Mentawai Tour Guide — Open Trip Mentawai",
   description:
     "Open Trip 2 Hari 1 Malam & 3 Hari 2 Malam — Full Service dari Tuapejat. Penginapan AC, boat tenda charter, snorkeling, SUP, dokumentasi underwater & drone.",

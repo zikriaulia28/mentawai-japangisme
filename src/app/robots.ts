@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://japangisme-mentawai.vercel.app/sitemap.xml",
+    sitemap: "https://mentawai-japangisme.vercel.app/sitemap.xml",
   };
 }
